@@ -11,6 +11,10 @@ class TFood extends PluginBase implements Listener {
    public function onEnable() {
       $this->getServer ()->getPluginManager ()->registerEvents ( $this, $this );
    }
+   public function join(PlayerJoinEvent $event) {
+     $player = $event->getPlayer()
+     $player->setFood(20);
+   }
    public function onFood(PlayerExhaustEvent $event) {
      $event->setCancelled(true);
    }
